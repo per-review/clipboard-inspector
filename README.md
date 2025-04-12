@@ -11,3 +11,20 @@ A few scripts are available:
 -   `npm run start` starts a local server on [127.0.0.1:8000](http://127.0.0.1:8000/)
 -   `npm run build` builds the project
 -   `npm run deploy` deploys the project by building it and pushing to the `gh-pages` Git branch, where GitHub Pages is set up to run.
+
+
+# Local container
+
+See `./Containerfile`.
+
+Build:
+
+```
+podman build -t cbinspect .
+```
+
+Run:
+
+```
+podman run -d --restart="always" --read-only -p 8000:8000 localhost/cbinspect
+```
